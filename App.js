@@ -25,7 +25,7 @@ var createReactClass = require('create-react-class');
 /*
  * TODO: Add your API key below!!
  */
-var apiKey = "YOUR_API_KEY_HERE";
+var apiKey = "7F38B12D-B5EC-4CA4-A4A6-4F54979D40E6";
 
 var vrScenes = {
     '360 Photo Tour': require('./js/360PhotoTour/MainScene'),
@@ -39,9 +39,10 @@ var vrScenes = {
 
 var arScenes = {
   'AR Sample': require('./js/ARSample/HelloWorldSceneAR.js'),
+  'Portals': require('./js/Portals/Portals.js'),
 }
 
-var showARScene = false;
+var showARScene = true;
 
 var ViroCodeSamplesSceneNavigator = createReactClass({
   render: function() {
@@ -50,7 +51,7 @@ var ViroCodeSamplesSceneNavigator = createReactClass({
       return (
         <ViroARSceneNavigator
           initialScene={{
-            scene: arScenes['AR Sample'],
+            scene: arScenes['Portals'],
           }}
           apiKey={apiKey} />
         );
@@ -58,7 +59,7 @@ var ViroCodeSamplesSceneNavigator = createReactClass({
       return (
         <ViroSceneNavigator
           initialScene={{
-            scene: vrScenes['360 Photo Tour'],
+            scene: vrScenes['Portals'],
           }}
           apiKey={apiKey} />
       );
